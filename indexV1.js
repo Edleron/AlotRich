@@ -6,10 +6,8 @@ let newSets = new Array();
 mySorthingArray(givenNumbers);
 
 for (let index = 0; index < givenNumbers.length; index++) {
-    newSets.push(givenNumbers[index]);
     for (let t = 0; t < 6; t++) {
-        myFunction(newSets[0][0], t, newSets[index], 60)
-        newSets.push([0, 0, 0, 0, 0, 0]);
+        myFunction(givenNumbers[0][0], t, givenNumbers[index], 61)
     }
 }
 
