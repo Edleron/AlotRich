@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 let givenNumbersX = [[11, 18, 23, 34, 35, 41]];
 
 let givenNumbers = [[23, 11, 18, 34, 35, 41]];
@@ -46,5 +48,20 @@ function sortFunction(a, b) {
 }
 
 newSets.sort(sortFunction);
-console.log(newSets);
-console.log(typeof newSets, newSets.length);
+//console.log(newSets);
+//console.log(typeof newSets, newSets.length);
+
+
+// convert JSON object to a string
+const newJsondata = JSON.stringify(newSets)
+
+function saveToJson() {
+    fs.writeFile('data.json', newJsondata, err => {
+        if (err) {
+            throw err
+        }
+        console.log('JSON data is saved.')
+    })
+}
+
+saveToJson();
