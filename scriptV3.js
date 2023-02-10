@@ -28,17 +28,16 @@ const combinations = (n, k) => {
         tail = combinations(n.slice(i + 1), k - 1);
 
 
-        console.log(head, tail);
-
         // Head ve Tail yukarıdaki kurala göre tanımlandı
         // Tail uzunluğu 
         for (let j = 0; j < tail.length; j++) {
             let combo = head.concat(tail[j]); // Burada head ile tail birleştirip kümezisi oluştutur.
+            console.log(combo, head, tail[j]);
             combos.push(combo);
         }
     }
 
-    return data;
+    return combos;
 }
 
 console.log(combinations([1, 2, 3, 4, 5], 3));
